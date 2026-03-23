@@ -22,7 +22,7 @@ if st.button("Добави"):
 })
 st.success(f"{name} е добавено!")
 else:
-st.warning("Попълнете всички полета!")
+  st.warning("Попълнете всички полета!")
 
 # Премахване
 if st.session_state.animals:
