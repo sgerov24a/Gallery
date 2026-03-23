@@ -5,7 +5,7 @@ st.title("Галерия от любими животни")
 
 # Списък със животни
 if "animals" not in st.session_state:
-st.session_state.animals = []
+  st.session_state.animals = []
 
 # Добавяне
 st.header("Добави ново животно")
@@ -14,11 +14,11 @@ description = st.text_area("Описание")
 image_url = st.text_input("URL на картинка")
 
 if st.button("Добави"):
-if name and description and image_url:
-st.session_state.animals.append({
-"име": name,
-"описание": description,
-"картинка": image_url
+  if name and description and image_url:
+    st.session_state.animals.append({
+   "име": name,
+   "описание": description,
+   "картинка": image_url
 })
 st.success(f"{name} е добавено!")
 else:
@@ -26,7 +26,7 @@ st.warning("Попълнете всички полета!")
 
 # Премахване
 if st.session_state.animals:
-st.header("Премахни животно")
+  st.header("Премахни животно")
 
 names = []
 for a in st.session_state.animals:
@@ -35,11 +35,11 @@ names.append(a["име"])
 remove_name = st.selectbox("Избери животно за премахване", names)
 
 if st.button("Премахни"):
-for a in st.session_state.animals:
-if a["име"] == remove_name:
-st.session_state.animals.remove(a)
-break
-st.success(f"{remove_name} е премахнато!")
+  for a in st.session_state.animals:
+    if a["име"] == remove_name:
+      st.session_state.animals.remove(a)
+    break
+    st.success(f"{remove_name} е премахнато!")
 
 # Визуализация
 st.header("Галерия")
